@@ -1,0 +1,12 @@
+.poop {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe {
+  border: 1px solid #ccc;
+  padding: 2em;
+  border-radius: 8px;
+  margin: 1em;
+  flex-basis: 25%;
+}
