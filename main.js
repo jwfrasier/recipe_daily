@@ -1,6 +1,5 @@
 
-
-let imageContainer = document.querySelector(".poop")
+let imageContainer = document.querySelector(".item")
 
 let inputNode = document.querySelector(".inputfield")
 inputNode.addEventListener("keydown", function(event){
@@ -16,6 +15,7 @@ inputNode.addEventListener("keydown", function(event){
       .then(function(response){
     // Convert it into Json
         return response.json()
+        
       })
       //Run function from previous then
       .then(function(parsed){
@@ -31,10 +31,13 @@ inputNode.addEventListener("keydown", function(event){
           const ingredients = parsed.results[i].ingredients
           //make template to be used for each result
           const template = `
+          <div class="card" style="width: 30rem;">
+
           <div class="recipe">
-            <h3>${title}</h3>
-            <img src="${thumbnail}" alt="">
-            <p>"${ingredients}"</p>
+          <h3 class="card-title">${title}</h3>
+          <img class="card-img-top" src="${thumbnail}" alt="">
+          <p class="card-text">${ingredients}</p>
+          </div>
           </div>
           `
           // inserts the new child element inside but at the end of the imageContainer
